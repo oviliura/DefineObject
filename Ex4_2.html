@@ -10,7 +10,7 @@
       var inputArray = someObjectID.split(".");
       var someObject = document.getElementById(inputArray[0]);
       if (someObject===null){
-          return console.log("Type of input parameter is " + someObject + " or parameter does not exist.");
+          return console.log("Type of \'" + someObjectID +"\' is " + someObject + " or element does not exist.");
       }
       else {
           if(inputArray.length==1){
@@ -20,7 +20,7 @@
           else{
             var someElement = someObject[inputArray[1]-1]
             if(someElement===null){
-              return console.log("Type of input element is " + someElement + " or element does not exist.");
+              return console.log("Type of " + someObjectID +" is " + someElement + " or element does not exist.");
             }
             else{
               var elementType = (typeof(someElement));

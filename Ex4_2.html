@@ -12,11 +12,6 @@
       if (someObject===null){
           return console.log("Type of input parameter is " + someObject + " or parameter does not exist.");
       }
-      /* else if (someObject === undefined){
-          return console.log("Type of input parameter is " + someObject + " or parameter does not exist.");
-          //someObject = prompt(("Type of input parameter is " + objectType + "." +  "\nPlease, enter below object you interesting in:"), ""); 
-          //return ifExist(someObject);
-          } */
       else {
           if(inputArray.length==1){
             var objectType = (typeof(someObject));
@@ -31,32 +26,27 @@
               var elementType = (typeof(someElement));
               return console.log("Type of input element is " + elementType +".");
             }
-            
           }
-    
       }
-    }
-    function selectedObjects(){
+}
+
+    function getObjectsSelectedByUser(){
       var checkedElements = []; 
       var checkBoxs = document.getElementsByClassName("checked");
       for(var i = 0; i<checkBoxs.length; i++){
         if(((checkBoxs[i].type == "checkbox")||(checkBoxs[i].type == "radio")) && (checkBoxs[i].checked)){
-          console.log(checkBoxs[i])
+          console.log(checkBoxs[i]);
         }
         else if((checkBoxs[i].type == "text"||checkBoxs[i].type == "password") && (checkBoxs[i].value !="")){
-          console.log(checkBoxs[i])
+          console.log(checkBoxs[i]);
         } 
         else if((checkBoxs[i].selected == true)){
-          console.log(checkBoxs[i])
+          console.log(checkBoxs[i]);
         }
       }
-      
-      //if(!letters.checked){
-      var ch= "f";
-      //}
-      //console.log(checkBoxs);
     }
-  </script>
+
+</script>
 </head>
 <body>
 <h1>
@@ -114,13 +104,8 @@
 </tr>
 </table>
 </center>
-<!--comment-->
-
-
-
-
 <input id="clickMe1" type="button" value="Define object" onclick = "ifExist()";/>
-<input id="clickMe2" type="button" value="Selected objects" onclick = "selectedObjects()";/>
+<input id="clickMe2" type="button" value="Selected objects" onclick = "getObjectsSelectedByUser()";/>
 
 <h2>
 <br>

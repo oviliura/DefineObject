@@ -1,0 +1,115 @@
+<!DOCTYPE>
+<html>
+
+<head>
+<title>Defining Object</title>
+<script type="text/javascript">
+
+  function ifExist(){
+      var someObjectID = prompt("Please, enter object ID or ID.element you interesting in.", "");
+      var inputArray = someObjectID.split(".");
+      var someObject = document.getElementById(inputArray[0]);
+      if (someObject===null){
+          return console.log("Type of \'" + someObjectID +"\' is " + someObject + " or element does not exist.");
+      }
+      else {
+          if(inputArray.length==1){
+            var objectType = (typeof(someObject));
+            return console.log("Type of input parameter is " + objectType +".");
+          }
+          else{
+            var someElement = someObject[inputArray[1]-1]
+            if(someElement===null){
+              return console.log("Type of " + someObjectID +" is " + someElement + " or element does not exist.");
+            }
+            else{
+              var elementType = (typeof(someElement));
+              return console.log("Type of input element is " + elementType +".");
+            }
+          }
+      }
+}
+
+    function getObjectsSelectedByUser(){
+      var checkedElements = []; 
+      var checkBoxs = document.getElementsByClassName("checked");
+      for(var i = 0; i<checkBoxs.length; i++){
+        if(((checkBoxs[i].type == "checkbox")||(checkBoxs[i].type == "radio")) && (checkBoxs[i].checked)){
+          console.log(checkBoxs[i]);
+        }
+        else if((checkBoxs[i].type == "text"||checkBoxs[i].type == "password") && (checkBoxs[i].value !="")){
+          console.log(checkBoxs[i]);
+        } 
+        else if((checkBoxs[i].selected == true)){
+          console.log(checkBoxs[i]);
+        }
+      }
+    }
+
+</script>
+</head>
+<body>
+<h1>
+<center>Let's test my function</center>
+</h1>
+<center>
+<table  border="1">
+<tr>
+
+  <td width = "25%" hight = "10%">
+    <p><em> <center>Please, select something below</center></em></p>
+ <center>
+ <input type="checkbox" class = "checked">Letter A<br>
+ <input type="checkbox" class = "checked">Letter B<br>
+ <input type="checkbox" class = "checked">Letter C<br>
+ <input type="checkbox" class = "checked">Letter D<br>
+ <input type="checkbox" class = "checked">Letter E<br>
+ <p><input type="submit" value="Send" id="cbSend"></p></center>
+  </td>
+  
+  <td width = "25%" hight = "10%">
+    <p><em> <center>Please, enter some text below</center></em></p>
+    <center><input type = "text" placeholder="Enter some text" class = "checked">
+    <p><input type="submit" value="Send"></p></center>
+
+    <p><em><center>Please, enter some password below</center></em></p>
+    <center><input type = "password" placeholder="Enter some pass" class = "checked">
+    <p><input type="submit" value="Send"></p></center>
+  </td>
+  
+  <td width = "25%" hight = "10%">
+    <p><em> <center>Please, select some items below</center></em></p>
+  <center><select name="select" size ="6" multiple id= "numbers">
+    <option class  = "checked">Number 1</option>
+    <option class  = "checked">Number 2</option>
+    <option class  = "checked">Number 3</option>
+    <option class  = "checked">Number 4</option>
+    <option class  = "checked">Number 5</option>
+    <option class  = "checked">Number 6</option>
+    <option class  = "checked">Number 7</option>
+    <option class  = "checked">Number 8</option>
+   </select></center>
+    <p><center><input type="submit" value="Send"></center></p>
+</td>
+
+ <td  width = "25%" hight = "10%">
+  <p><em><center> Please, select your gender</center></em></p>
+  <center><input type="radio" class  = "checked" name="radio" value="male"> Male_.<br>
+  <input type="radio" class  = "checked" name="radio" value="female" checked> Female<br>
+  <input type="radio" class  = "checked" name="radio" value="other" > Other1<br>
+  <input type="radio" class  = "checked" name="radio" value="other"> Other2<br>
+  <input type="radio" class  = "checked" name="radio" value="other"> Other3<br></center>
+  <center><p><input type="submit" value="Send"></p></center>
+</td>
+</tr>
+</table>
+</center>
+<input id="clickMe1" type="button" value="Define object" onclick = "ifExist()";/>
+<input id="clickMe2" type="button" value="Selected objects" onclick = "getObjectsSelectedByUser()";/>
+
+<h2>
+<br>
+<i>Thank you for attention!</i>
+</h2>
+</body>
+</html>

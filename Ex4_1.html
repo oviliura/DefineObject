@@ -1,0 +1,110 @@
+<!DOCTYPE>
+<html>
+
+<head>
+<title>Defining Object</title>
+</head>
+<body>
+<h1>
+<center>Let's test my function</center>
+</h1>
+<center>
+<table  border="1">
+<tr>
+
+  <td width = "25%" hight = "10%">
+    <p><em> <center>Please, select something below</center></em></p>
+    <center><form action="formdata" method="POST" name="form1" id="letters">
+ <input type="checkbox" id = letterA>Letter A<br>
+ <input type="checkbox">Letter B<br>
+ <input type="checkbox">Letter C<br>
+ <input type="checkbox">Letter D<br>
+ <input type="checkbox">Letter E<br>
+ <p><input type="submit" value="Send" id="cbSend"></p>
+</form></center>
+  </td>
+  
+  <td width = "25%" hight = "10%">
+    <p><em> <center>Please, enter some text below</center></em></p>
+    <center><form action = "js" method = "get" name = "input text" >
+    <input type = "text">
+    <p><input type="submit" value="Send"></p>
+    </form></center>
+    <p><em><center>Please, enter some password below</center></em></p>
+    <center><form action = "js" method = "get" name = "input pass">
+    <input type = "password">
+    <p><center><input type="submit" value="Send"></center></p>
+    </form></center>
+  </td>
+  
+  <td valign="baseline" width = "25%" hight = "10%">
+    <p><em> <center>Please, select some items below</center></em></p>
+    <center><form action="js" method="post" name="form1">
+    <select name="select" size ="6" multiple id= "numbers">
+    <option>Number 1</option>
+    <option>Number 2</option>
+    <option>Number 3</option>
+    <option>Number 4</option>
+    <option>Number 5</option>
+    <option>Number 6</option>
+    <option>Number 7</option>
+    <option>Number 8</option>
+   </select>
+    <p><center><input type="submit" value="Send"></center></p>
+    </form></center>
+</td>
+
+ <td  width = "25%" hight = "10%">
+  <p><em><center> Please, select your gender</center></em></p>
+  <center><form action="js" method="post" name="form2" id = "cbox">
+  <input type="radio" name="radio" value="male"> Male_.<br>
+  <input type="radio" name="radio" value="female" checked> Female<br>
+  <input type="radio" name="radio" value="other" > Other1<br>
+  <input type="radio" name="radio" value="other"> Other2<br>
+  <input type="radio" name="radio" value="other"> Other3<br>
+  <p><input type="submit" value="Send"></p>
+  </form></center>
+</td>
+</tr>
+</table>
+</center>
+
+<script type="text/javascript">
+
+function ifExist(){
+    var someObjectID = prompt("Please, enter object ID or ID.element you interesting in.", "");
+    var inputArray = someObjectID.split(".");
+    var someObject = document.getElementById(inputArray[0]);
+    if (someObject===null){
+        return console.log("Type of input parameter is " + someObject + " or parameter does not exist.");
+    }
+    else {
+        if(inputArray.length==1){
+          var objectType = (typeof(someObject));
+          return console.log("Type of input parameter is " + objectType +".");
+        }
+        else{
+          var someElement = someObject[inputArray[1]-1]
+          if(someElement===null){
+            return console.log("Type of input element is " + someElement + " or element does not exist.");
+          }
+          else{
+            var elementType = (typeof(someElement));
+            return console.log("Type of input element is " + elementType +".");
+          }
+          
+        }
+  
+    }
+  }
+</script>
+
+
+<input id="clickMe" type="button" value="Define object" onclick = "ifExist()";/>
+
+<h2>
+<br>
+<i>Thank you for attention!</i>
+</h2>
+</body>
+</html>
